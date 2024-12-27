@@ -1,5 +1,6 @@
 'use client'
 
+import { Github, Mail } from 'lucide-react'
 import React, { useState, useEffect, useCallback } from 'react'
 
 interface Habit {
@@ -100,13 +101,14 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 bg-white text-gray-800">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold">Habit Tracker</h1>
+        <h1 className="text-5xl font-bold">Habit Tracker</h1>
         {daysToNewYear <= 12 && (
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-lg text-gray-600 mt-2">
             {daysToNewYear} day{daysToNewYear !== 1 ? 's' : ''} to New Year
           </p>
         )}
       </header>
+      <h2 className='pb-5'>A simple habit tacker that stores data on your browser.</h2>
       <div className="mb-4">
         <input
           type="text"
@@ -142,6 +144,26 @@ export default function Home() {
           </li>
         ))}
       </ul>
+        <footer className="mt-auto flex justify-center py-48">
+          <div className="flex gap-4">
+            <a
+              href="mailto:gurshaansinghd@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/gurshaan17/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          </div>
+        </footer>
     </div>
   )
 }
